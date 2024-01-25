@@ -1,24 +1,22 @@
-import './App.css';
+import './index.css';
+import { Box, Grid } from '@mui/material';
+import Footer from './components/Footer';
+// import MiniDrawer from './components/LeftPanel';
+import Main from './components/Main';
+import TaskTable from './components/TaskTable';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={`${process.env.PUBLIC_URL}/logo.svg`} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <div className="app">
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={12} container justifyContent="center">
+          <TaskTable />
+          <Main />
+        </Grid>
+      </Grid>
+    </Box>
+    <Footer />
+  </div>
+);
 
 export default App;
